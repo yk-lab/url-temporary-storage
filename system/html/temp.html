@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title><!--{title}--></title>
+		<!--{head}-->
+		<!--{css_file}-->
+		<!--{script_file}-->
+		<!--{css}-->
+		<!--[if lt IE 9]>
+			<script src="/js/html5shiv.js"></script>
+		<![endif]-->
+		<!--{script}-->
+	</head>
+	<body>
+		<div id="Page">
+			<header id="Header">
+				<h1><!--{site_name}--></h1>
+				<div class="description"><!--{site_description}--></div>
+				<nav id="globalNav">
+					<ul class="nav-list">
+						<!--{globalNav}-->
+					</ul>
+				</nav>
+			</header>
+			<div id="wrapper">
+				<div id="main"><!--{main}--></div>
+				<div id="sidebar">サイドバー</div>
+			</div>
+			<footer id="Footer">
+				<div class="copyright">Copyright <!--{YYYY}--> All rights reserved, <a href="<!--{home_url}-->"><!--{site_name}-->.</a></div>
+			</footer>
+		</div><!-- /Page -->
+	    <script>
+	    (function () {
+	    
+	        // Create mobile element
+	        var mobile = document.createElement('div');
+	        mobile.className = 'nav-mobile';
+	        var icon = document.createElement('i');
+	        icon.className = 'icon-dropmenu';
+	        document.querySelector('#globalNav').appendChild(mobile).appendChild(icon);
+	    
+	        // hasClass
+	        function hasClass(elem, className) {
+	            return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+	        }
+	    
+	        // toggleClass
+	        function toggleClass(elem, className) {
+	            var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+	            if (hasClass(elem, className)) {
+	                while (newClass.indexOf(' ' + className + ' ') >= 0) {
+	                    newClass = newClass.replace(' ' + className + ' ', ' ');
+	                }
+	                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+	            } else {
+	                elem.className += ' ' + className;
+	            }
+	        }
+	    
+	        // Mobile nav function
+	        var mobileNav = document.querySelector('.nav-mobile');
+	        var toggle = document.querySelector('.nav-list');
+	        mobileNav.onclick = function () {
+	            toggleClass(this, 'nav-mobile-open');
+	            toggleClass(toggle, 'nav-active');
+	        };
+	    })();
+	    </script>
+	    <!--{script_end}-->
+	</body>
+</html>

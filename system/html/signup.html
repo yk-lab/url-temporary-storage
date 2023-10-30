@@ -1,0 +1,50 @@
+<h2>アカウントの新規作成</h2>
+<form method="post" class="grid-form">
+<div data-row-span="3">
+  <div data-field-span="2">
+    <label>名前</label>
+    <input type="text" name="name" value="<!--{name}-->">
+  </div>
+  <div data-field-span="1">
+    <label>性別</label>
+    <!--{sex}-->
+    <div style="width:50%;float:left;"><input type="radio" id="sexM" name="sex" value="M"><label for="sexM">男</label></div>
+    <div style="width:50%;float:left;"><input type="radio" id="sexF" name="sex" value="F"><label for="sexF">女</label></div>
+  </div>
+</div>
+<div data-row-span="4">
+  <div data-field-span="2">
+    <label>生年月日（年）</label>
+    <select name="birth_y">
+    	<!--{birth_y}-->
+    </select>
+  </div>
+  <div data-field-span="1">
+    <label>生年月日（月）</label>
+    <select name="birth_m">
+    	<!--{birth_m}-->
+    </select>
+  </div>
+  <div data-field-span="1">
+    <label>生年月日（日）</label>
+    <select name="birth_d">
+    	<!--{birth_d}-->
+    </select>
+  </div>
+</div>
+<div data-row-span="3">
+  <div data-field-span="2">
+    <label>メールアドレス</label>
+    <input type="text" name="id" value="<!--{id}-->">
+  </div>
+  <div data-field-span="1">
+    <label>パスワード</label>
+    <input type="password" name="passwd" value="">
+  </div>
+</div>
+
+<div align="center">
+  <button type="submit" name="mode" value="reg" style="margin-top:15px;padding:10px;width:80%;">Submit</button>
+</div>
+
+</form>
